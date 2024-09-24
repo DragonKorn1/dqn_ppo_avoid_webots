@@ -1,0 +1,37 @@
+#VRML_SIM R2023b utf8
+# License: Apache License 2.0
+# This PROTO represents a custom wooden box with recognition capabilities
+
+PROTO CustomWoodenBox [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 1 0 0
+  field SFVec3f size 0.3 0.3 0.3
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.8 0.6 0.4
+          roughness 0.5
+          metalness 0
+        }
+        geometry Box {
+          size IS size
+        }
+      }
+    ]
+    boundingObject Box {
+      size IS size
+    }
+    physics Physics {
+    }
+    recognitionColors [
+      0.8 0.6 0.4
+    ]
+    name "CustomWoodenBox"
+    model "CustomWoodenBox" 
+  }
+}
