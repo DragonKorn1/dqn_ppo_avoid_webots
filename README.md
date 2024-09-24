@@ -13,5 +13,8 @@ If you would like to run this simulation. Here is the instruction.
 ```
     pip install jupyterlab notebook voila ipykernel
 ```
-6. Install deepbots package from this [link](https://github.com/aidudezzz/deepbots?tab=readme-ov-file#install-deepbots)
+7. Install deepbots package 
+```
+    pip install deepbots
+```
 7. After installations, Download and follow the video instructions to run the simulation from this [link]
