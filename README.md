@@ -7,11 +7,11 @@ If you would like to run this simulation. Here is the instruction.
 1. Download Webots 2023b  ([Windows](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-windows), [Linux](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-linux), and [MacOS](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-macos)).
 2. Install Webots 2023b.
 3. Install [python](https://www.python.org/downloads/) (version 3.8 or later)
+5. Install pip package installer from this [link](https://pip.pypa.io/en/stable/installation)
 4. Install numpy and opencv-python package installer 
 ```
     pip3 install numpy opencv-python 
 ```
-5. Install pip package installer from this [link](https://pip.pypa.io/en/stable/installation)
 6. Install PyTorch from this [link](https://pytorch.org)
 7. Install Jupeyter Lab, Jupyter Notebook, Voila, and IpyKernel 
 ```
