@@ -1,0 +1,434 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/RoadLine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Pavement.proto"
+EXTERNPROTO "../protos/CustomWoodenBox.proto"
+EXTERNPROTO "../protos/CustomPedestrian.proto"
+
+WorldInfo {
+  basicTimeStep 75
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        -1
+      ]
+    }
+  ]
+}
+Viewpoint {
+  fieldOfView 1
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 2.1542432856499314 0.14738519190102828 3.356017575337119
+}
+StraightRoadSegment {
+  id "road"
+  width 1.1
+  lines [
+    RoadLine {
+      width 0.05
+    }
+  ]
+  rightBorder FALSE
+  leftBorder FALSE
+  bottom TRUE
+  endLine [
+    ""
+  ]
+  pavementAppearance Pavement {
+    type "black stone"
+    textureTransform TextureTransform {
+    }
+  }
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+TexturedBackground {
+  texture "mars"
+  skybox FALSE
+  skyColor [
+    0 0 1
+  ]
+}
+TexturedBackgroundLight {
+  texture "stadium"
+}
+DEF FOUR-WH-ROBOT Robot {
+  translation 0.85 -0.179 0.0494019
+  rotation 0.0021417955514564566 0.3078969886392071 0.9514172886271952 0.0007435336533395862
+  children [
+    GPS {
+    }
+    DEF RECEIVER Receiver {
+    }
+    DEF EMITTER Emitter {
+    }
+    Accelerometer {
+      zAxis FALSE
+    }
+    DistanceSensor {
+      translation 0.134 0 0
+      name "distance_sensor"
+      lookupTable [
+        0 0 0
+        4 1000 0
+      ]
+      numberOfRays 2
+      aperture 0.131
+    }
+    DEF ULTRASONIC Solid {
+      translation 0.13 0 0
+      children [
+        DEF ULTRA Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.07 0.04
+          }
+        }
+      ]
+      name "Ultrasonic"
+      boundingObject USE ULTRA
+      physics Physics {
+      }
+    }
+    DEF LEFT_STEER HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0.08 0.12 0
+        springConstant 100
+        dampingConstant 0.05
+      }
+      device [
+        PositionSensor {
+          name "left_steer_sensor"
+        }
+        RotationalMotor {
+          name "left_steer"
+          minPosition -0.7
+          maxPosition 0.7
+        }
+      ]
+      endPoint Solid {
+        translation 0.08 0.12 0
+        rotation 0 0 -1 1.5707000002681013
+        children [
+          DEF FRONT_LEFT_WHEEL HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.4511458217943443
+              axis -1 0 0
+              dampingConstant 0.01
+            }
+            device [
+              PositionSensor {
+                name "front_left_wheel_sensor"
+              }
+              RotationalMotor {
+                name "front_left_wheel"
+                maxVelocity 25
+              }
+            ]
+            endPoint Solid {
+              rotation -1 0 0 0.45114582179434415
+              children [
+                DEF WHEEL_ROT Pose {
+                  rotation 0 -1 0 1.57
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 1 0
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.03
+                        radius 0.05
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "left_front"
+              boundingObject USE WHEEL_ROT
+              physics Physics {
+              }
+            }
+          }
+        ]
+        boundingObject DEF DUMMY Sphere {
+          radius 0.005
+          subdivision 3
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF RIGHT_STEER HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0.08 -0.12 0
+        springConstant 100
+        dampingConstant 0.05
+      }
+      device [
+        PositionSensor {
+          name "right_steer_sensor"
+        }
+        RotationalMotor {
+          name "right_steer"
+          minPosition -0.7
+          maxPosition 0.7
+        }
+      ]
+      endPoint Solid {
+        translation 0.08 -0.12 0
+        rotation 0 0 -1 1.570000000267397
+        children [
+          DEF FRONT_RIGHT_WHEEL HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.45114937329382565
+              axis -1 0 0
+              dampingConstant 0.01
+            }
+            device [
+              PositionSensor {
+                name "front_right_wheel_sensor"
+              }
+              RotationalMotor {
+                name "front_right_wheel"
+                maxVelocity 25
+              }
+            ]
+            endPoint Solid {
+              rotation -1 0 0 0.45114937329382576
+              children [
+                DEF WHEEL_ROT Pose {
+                  rotation 0 -1 0 1.57
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 1 0
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.03
+                        radius 0.05
+                      }
+                    }
+                  ]
+                }
+              ]
+              boundingObject USE WHEEL_ROT
+              physics Physics {
+              }
+            }
+          }
+        ]
+        name "right_steer"
+        boundingObject DEF DUMMY Sphere {
+          radius 0.005
+          subdivision 3
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF LEFT_REAR HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.45114607127393364
+        axis 0 1 0
+        anchor -0.08 0.12 0
+      }
+      device [
+        PositionSensor {
+          name "rear_left_wheel_sensor"
+        }
+        RotationalMotor {
+          name "rear_left_wheel"
+          maxVelocity 25
+        }
+      ]
+      endPoint Solid {
+        translation -0.08 0.12 0
+        rotation -0.21829186202412482 0.21794207218896003 -0.951235993927912 1.6223702161170996
+        children [
+          DEF WHEEL_ROT Pose {
+            rotation 0 -1 0 1.5707
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry DEF WHEEL_CYL Cylinder {
+                  height 0.03
+                  radius 0.05
+                }
+              }
+            ]
+          }
+        ]
+        name "rear left wheel"
+        boundingObject USE WHEEL_ROT
+        physics Physics {
+        }
+      }
+    }
+    DEF RIGHT_REAR HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.4511521714785242
+        axis 0 1 0
+        anchor -0.08 -0.12 0
+      }
+      device [
+        PositionSensor {
+          name "rear_right_wheel_sensor"
+        }
+        RotationalMotor {
+          name "rear_right_wheel"
+          maxVelocity 25
+        }
+      ]
+      endPoint Solid {
+        translation -0.08 -0.12 0
+        rotation -0.21827706637540767 0.21829809168759196 -0.9511577500394461 1.6207545590582344
+        children [
+          DEF WHEEL_ROT Pose {
+            rotation 0 -1 0 1.57
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry DEF WHEEL_CYL Cylinder {
+                  height 0.03
+                  radius 0.05
+                }
+              }
+            ]
+          }
+        ]
+        name "rear right wheel"
+        boundingObject DEF WHEEL_ROT Pose {
+          rotation 0 -1 0 1.5707
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 1 0
+                roughness 1
+                metalness 0
+              }
+              geometry DEF WHEEL_CYL Cylinder {
+                height 0.03
+                radius 0.05
+              }
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    Camera {
+      translation 0.1 0 0.04
+      width 640
+      height 480
+      recognition Recognition {
+      }
+    }
+    DEF CAMERA Solid {
+      translation 0.1 0 0.025
+      children [
+        DEF CAMERA Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.03 0.05
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject USE CAMERA
+      physics Physics {
+      }
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.26 0.18 0.05
+      }
+    }
+  ]
+  boundingObject USE BODY
+  physics Physics {
+    centerOfMass [
+      0 0 0
+    ]
+  }
+  controller "robot_super"
+}
+DEF SUPERVISOR Robot {
+  translation 1.99 0 2
+  children [
+    DEF RECEIVER Receiver {
+    }
+    DEF EMITTER Emitter {
+    }
+  ]
+  name "supervisor"
+  controller "4_wheel_supervisor"
+  supervisor TRUE
+}
+DEF TARGET Solid {
+  translation 3.585 -0.3 0.01
+  children [
+    Solid {
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+            }
+            texture ImageTexture {
+              url [
+                "../images/10854398.png"
+              ]
+            }
+            textureTransform TextureTransform {
+            }
+          }
+          geometry Plane {
+            size 0.5 0.5
+          }
+        }
+      ]
+    }
+  ]
+}
+DEF OBS CustomWoodenBox {
+  translation 2.45 0.3 0.14055202243848067
+  rotation 0.6648652733470206 0.7233149677071988 0.18646615185584114 4.322305187814141e-17
+}
+DEF PEDESTRIAN CustomPedestrian {
+  translation 2.84 0.3 0.15
+  rotation 0 0 0.9999999999999999 3.14
+  controllerArgs [
+    "-0.012"
+  ]
+}
