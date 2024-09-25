@@ -4,9 +4,9 @@ Pedestrian Avoidance Simulation on Webots with deepbots. This is the prototype c
 
 If you would like to run this simulation. Here is the instruction.
 
-1. Download Webots 2023b  (Windows, Linux, and MacOS).
+1. Download Webots 2023b  ([Windows](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-windows), [Linux](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-linux), and [MacOS](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-macos)).
 2. Install Webots 2023b.
-3. Install python (version 3.8 or later)
+3. Install [python](https://www.python.org/downloads/) (version 3.8 or later)
 4. Install pip package installer from this [link](https://pip.pypa.io/en/stable/installation)
 5. Install PyTorch from this [link](https://pytorch.org)
 6. Install Jupeyter Lab, Jupyter Notebook, Voila, and IpyKernel 
@@ -17,4 +17,4 @@ If you would like to run this simulation. Here is the instruction.
 ```
     pip install deepbots
 ```
-7. After installations, Download and follow the video instructions to run the simulation from this [link]
+7. After installations, Download and follow the video instructions to run the simulation from this
