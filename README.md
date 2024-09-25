@@ -21,4 +21,4 @@ If you would like to run this simulation. Here is the instruction.
 ```
     pip3 install deepbots
 ```
-9. After installations, Download and follow the video instructions to run the simulation from this
+9. After installations, Download and follow the video instructions to run the simulation from this [link](https://www.google.com)
