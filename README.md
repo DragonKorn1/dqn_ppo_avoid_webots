@@ -1,6 +1,8 @@
 # DQN PPO Pedestrian Avoidance on Webots
 
-Pedestrian Avoidance Simulation on Webots with deepbots. This is the prototype code for Pedestrian Avoidance.
+Pedestrian Avoidance Simulation on Webots with deepbots.
+
+Webots is released under the terms of the [Apache 2.0 license agreement](https://cyberbotics.com/doc/guide/webots-license-agreement).
 
 Prerequisite: (according to [Webots User Guide](https://cyberbotics.com/doc/guide/system-requirements))
 
