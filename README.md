@@ -5,12 +5,16 @@ Pedestrian Avoidance Simulation on Webots with deepbots. This is the prototype c
 Prerequisite: (according to [Webots User Guide](https://cyberbotics.com/doc/guide/system-requirements))
 
 Minimum Computer Specification: 
-CPU: 2 GHz dual core CPU clock speed 
-RAM: 2 GB of RAM.
-GPU: NVIDIA or AMD OpenGL at least 512 MB of RAM. (We reccommed NVIDIA GPU for CUDA)
-CUDA version: 11.8
-CUDNN version: 8.9.7
 
+CPU: 2 GHz dual core CPU clock speed 
+
+RAM: 2 GB of RAM.
+
+GPU: NVIDIA or AMD OpenGL at least 512 MB of RAM. (We reccommed NVIDIA GPU for CUDA)
+
+CUDA version: 11.8
+
+CUDNN version: 8.9.7
 
 If you would like to run this simulation. This is the steps to install before the simulation.
 
