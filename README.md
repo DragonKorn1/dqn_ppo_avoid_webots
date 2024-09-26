@@ -2,7 +2,8 @@
 
 Pedestrian Avoidance Simulation on Webots with deepbots. This is the prototype code for Pedestrian Avoidance.
 
-Prerequisite: (according to [Webots User Guide](https://cyberbotics.com/doc/guide/system-requirements)
+Prerequisite: (according to [Webots User Guide](https://cyberbotics.com/doc/guide/system-requirements))
+
 Minimum Computer Specification: 
 CPU: 2 GHz dual core CPU clock speed 
 RAM: 2 GB of RAM.
