@@ -1,4 +1,4 @@
-# DQN_PPO_Pedestrian_avoidance_webots
+# DQN PPO Pedestrian Avoidance on Webots
 
 Pedestrian Avoidance Simulation on Webots with deepbots. This is the prototype code for Pedestrian Avoidance.
 
