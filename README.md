@@ -33,4 +33,4 @@ If you would like to run this simulation. This is the steps to install before th
 ```
     pip3 install deepbots
 ```
-***The video instructions to install and run the simulation is displayed from this [link](https://youtu.be/C7BN6PAKfh8)
+***The instruction video to install and run the simulation is displayed from this [link](https://youtu.be/C7BN6PAKfh8)
