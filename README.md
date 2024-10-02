@@ -9,7 +9,7 @@ Prerequisite: (according to [Webots User Guide](https://cyberbotics.com/doc/guid
 Minimum Computer Specification: 
  - CPU: 2 GHz dual core CPU clock speed 
  - RAM: 2 GB of RAM.
- - GPU: NVIDIA or AMD OpenGL at least 512 MB of RAM. (I recommend NVIDIA GPU for CUDA)
+ - GPU: NVIDIA or AMD OpenGL at least 512 MB of RAM. (NVIDIA GPUs are recommended)
  - CUDA version: 11.8
  - CUDNN version: 8.9.7
 
