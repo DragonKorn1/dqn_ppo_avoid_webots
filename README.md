@@ -35,7 +35,7 @@ If you would like to run this simulation. This is the steps to install before th
 ```
     pip3 install deepbots
 ```
-# the code structure
+# Code structure
 The structure of the simulation code is classified in 3 main parts.
  - worlds: the worlds folder contains the simulation environment and controller file configurations to simulate the scenario.
  - controllers: the controller folder includes the Robot-Supervisor scheme coding to manipulate both the robot's and the supervisor's configuration and learning algorithms as well as the pedestrian robot control. These are seperated into 3 parts.
