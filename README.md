@@ -16,7 +16,7 @@ Minimum Computer Specification:
 # Installation Guide and Simulation procedures
 If you would like to run this simulation. This is the steps to install before the simulation.
 
-***The instruction video to install and run the simulation is displayed from this [link](https://youtu.be/C7BN6PAKfh8)
+***The instruction video how to install and run the simulation is displayed from this [link](https://youtu.be/C7BN6PAKfh8)
 
 1. Download Webots 2023b  ([Windows](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-windows), [Linux](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-linux), and [MacOS](https://cyberbotics.com/doc/guide/installation-procedure#installation-on-macos)).
 2. Install Webots 2023b.
